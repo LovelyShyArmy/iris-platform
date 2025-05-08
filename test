@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRIS - Industrial Sourcing Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-blue-900 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                </svg>
+                <span class="font-bold text-xl">IRIS</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#features" class="hover:text-blue-200">Fonctionnalités</a>
+                <a href="#pricing" class="hover:text-blue-200">Tarifs</a>
+                <a href="#about" class="hover:text-blue-200">À propos</a>
+            </div>
+            <div>
+                <a href="login.html" class="bg-white text-blue-900 px-4 py-2 rounded-md font-medium hover:bg-blue-100 transition">Se connecter</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-800 to-blue-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Industrial Sourcing, Reimagined</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">La plateforme qui connecte les grands groupes industriels avec des sous-traitants qualifiés grâce à l'IA et des audits rigoureux.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="register.html" class="bg-white text-blue-900 px-6 py-3 rounded-md font-bold hover:bg-blue-100 transition">Inscription Fournisseur</a>
+                <a href="register.html?type=buyer" class="bg-transparent border-2 border-white px-6 py-3 rounded-md font-bold hover:bg-white hover:text-blue-900 transition">Inscription Acheteur</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Comment IRIS révolutionne votre sourcing</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                    <div class="text-blue-600 mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Audits Complets</h3>
+                    <p class="text-gray-600">Évaluation des certifications, équipements et capacités de production pour un score de fiabilité clair.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                    <div class="text-blue-600 mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Matching Intelligent</h3>
+                    <p class="text-gray-600">Notre algorithme spécialisé vous connecte avec les partenaires les plus adaptés à vos besoins spécifiques.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                    <div class="text-blue-600 mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Approche Transatlantique</h3>
+                    <p class="text-gray-600">Connectez-vous facilement avec des partenaires en Europe et en Amérique du Nord.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Prêt à transformer votre sourcing industriel ?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Rejoignez la plateforme qui garantit confiance, rapidité et transparence.</p>
+            <a href="register.html" class="bg-blue-600 text-white px-8 py-3 rounded-md font-bold hover:bg-blue-700 transition inline-block">Commencer maintenant</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                        </svg>
+                        <span class="font-bold text-xl">IRIS</span>
+                    </div>
+                    <p class="text-gray-400">La plateforme intelligente pour le sourcing industriel.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Navigation</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white">Accueil</a></li>
+                            <li><a href="#features" class="text-gray-400 hover:text-white">Fonctionnalités</a></li>
+                            <li><a href="#pricing" class="text-gray-400 hover:text-white">Tarifs</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Entreprise</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#about" class="text-gray-400 hover:text-white">À propos</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Carrières</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Légal</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white">Confidentialité</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">CGU</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Cookies</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 IRIS. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
