@@ -1,5 +1,7 @@
 # IRIS – Industrial Sourcing Platform
 
+A platform designed to connect businesses through intelligent sourcing, enabling suppliers and buyers to match efficiently via AI-driven insights and verified audit systems.
+
 A full-stack B2B matchmaking platform with supplier audit, offer matching, messaging, file uploads, and real-time notifications.
 
 ## Stack
