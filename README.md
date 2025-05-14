@@ -1,1 +1,1 @@
-# iris-platform
+# IRIS – Industrial Sourcing Platform
