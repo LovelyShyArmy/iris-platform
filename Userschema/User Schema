@@ -1,0 +1,5 @@
+role: {
+  type: String,
+  enum: ['supplier', 'buyer', 'admin', 'moderator', 'auditor'],
+  default: 'supplier'
+}

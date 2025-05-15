@@ -54,3 +54,6 @@ app.use("/uploads", express.static("uploads")); // Serve files
 
 import adminRoutes from "./routes/adminRoutes.js";
 app.use("/api/admin", adminRoutes);
+
+import notificationRoutes from "./routes/notificationRoutes.js";
+app.use("/api/notifications", notificationRoutes);

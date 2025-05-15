@@ -28,3 +28,7 @@ import Messages from "./pages/Messages";
 import AdminDashboard from "./pages/AdminDashboard";
 // ...
 <Route path="/admin" element={<AdminDashboard />} />
+
+import AdminDashboard from "./pages/AdminDashboard";
+// ...
+<Route path="/admin" element={<AdminDashboard />} />
