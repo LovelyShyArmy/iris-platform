@@ -1,0 +1,2 @@
+const { score, breakdown } = scoreMatchVerbose(offer, supplier, audit);
+return { supplier, audit, score, breakdown };

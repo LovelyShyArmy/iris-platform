@@ -9,3 +9,13 @@ const notificationSchema = new mongoose.Schema({
 });
 
 export default mongoose.model("Notification", notificationSchema);
+
+
+{
+  user: ObjectId,
+  type: "match" | "message" | "rating" | "system",
+  message: "Vous avez été sélectionné...",
+  read: Boolean,
+  createdAt: Date
+}
+

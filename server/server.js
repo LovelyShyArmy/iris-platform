@@ -1,59 +1,63 @@
+// server.js
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import connectDB from "./config/db.js";
-import authRoutes from "./routes/authRoutes.js";
+import mongoose from "mongoose";
+import { createServer } from "http";
+import { Server } from "socket.io";
+import path from "path";
+import { fileURLToPath } from "url";
 
+// ENV + DB setup
 dotenv.config();
-connectDB();
-
 const app = express();
+const PORT = process.env.PORT || 5000;
+
+// Real-time server
+const httpServer = createServer(app);
+const io = new Server(httpServer, {
+  cors: {
+    origin: "*",
+  },
+});
+
+// Socket users
+let onlineUsers = new Map();
+io.on("connection", (socket) => {
+  console.log("🔌 User connected");
+
+  socket.on("register", (userId) => {
+    onlineUsers.set(userId, socket.id);
+  });
+
+  socket.on("disconnect", () => {
+    for (const [uid, sid] of onlineUsers.entries()) {
+      if (sid === socket.id) onlineUsers.delete(uid);
+    }
+  });
+});
+
+// Attach to app
+app.set("io", io);
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/auth", authRoutes);
+// Static file serving
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
-import express from "express";
-import dotenv from "dotenv";
-import cors from "cors";
-import connectDB from "./config/db.js";
+// MongoDB connection
+mongoose
+  .connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("✅ MongoDB connected"))
+  .catch((err) => console.error("❌ DB connection error:", err));
+
+// ROUTES
 import authRoutes from "./routes/authRoutes.js";
-
-dotenv.config();
-connectDB();
-
-const app = express();
-app.use(cors());
-app.use(express.json());
-
-app.use("/api/auth", authRoutes);
-
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
-
+import userRoutes from "./routes/userRoutes.js";
 import offerRoutes from "./routes/offerRoutes.js";
-app.use("/api/offers", offerRoutes);
-
-import auditRoutes from "./routes/auditRoutes.js";
-app.use("/api/audit", auditRoutes);
-
-import messageRoutes from "./routes/messageRoutes.js";
-app.use("/api/messages", messageRoutes);
-
-import matchRoutes from "./routes/matchRoutes.js";
-app.use("/api/match", matchRoutes);
-
-import ratingRoutes from "./routes/ratingRoutes.js";
-app.use("/api/ratings", ratingRoutes);
-
-import uploadRoutes from "./routes/uploadRoutes.js";
-app.use("/api/upload", uploadRoutes);
-app.use("/uploads", express.static("uploads")); // Serve files
-
-import adminRoutes from "./routes/adminRoutes.js";
-app.use("/api/admin", adminRoutes);
-
-import notificationRoutes from "./routes/notificationRoutes.js";
-app.use("/api/notifications", notificationRoutes);
+import matchRoutes from "./routes

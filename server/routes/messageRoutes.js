@@ -37,3 +37,13 @@ router.get("/:userId", protect, async (req, res) => {
 });
 
 export default router;
+
+const io = req.app.get("io");
+const receiverSocket = [...io.sockets.sockets].find(([id, sock]) => onlineUsers.get(receiverId) === id);
+if (receiverSocket) {
+  io.to(receiverSocket[0]).emit("notification", {
+    type: "message",
+    from: req.user.name,
+    text: "Nouveau message reçu 📩"
+  });
+}

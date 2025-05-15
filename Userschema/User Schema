@@ -3,3 +3,5 @@ role: {
   enum: ['supplier', 'buyer', 'admin', 'moderator', 'auditor'],
   default: 'supplier'
 }
+
+pushToken: String
