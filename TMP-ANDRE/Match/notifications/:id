@@ -1,1 +1,0 @@
-await logEvent(req.user.id, "alert_opened", `Alert: ${req.params.id}`);

@@ -1,7 +1,0 @@
-import { matchEmailTemplate } from "./templates/matchEmail.js";
-
-await sendEmail(
-  supplier.email,
-  "🎯 Nouveau Match Industriel",
-  matchEmailTemplate(supplier.name, offer.industry, "https://iris-app.com/dashboard")
-);
